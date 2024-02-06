@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class UIMainScene : MonoBehaviour
@@ -21,6 +22,10 @@ public class UIMainScene : MonoBehaviour
     protected IUIInfoContent m_CurrentContent;
     protected List<Building.InventoryEntry> m_ContentBuffer = new List<Building.InventoryEntry>();
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     private void Awake()
     {
