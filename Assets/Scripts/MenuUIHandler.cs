@@ -8,14 +8,22 @@ using UnityEngine.SceneManagement;
 public class MenuUIHandler : MonoBehaviour
 {
     public ColorPicker ColorPicker;
-
-    public void NewColorSelected(Color color)
-    {
-        // add code here to handle when a color is selected
-    }
     
+    public void SaveColors()
+    {
+        MainManager.instance.SaveColor();
+    }
+
+    public void LoadColors()
+    {
+        MainManager.instance.LoadColor();
+        ColorPicker.SelectColor(MainManager.instance.TeamColor);
+    }
+
     public void Quit()
     {
+        MainManager.instance.SaveColor();
+
         #if UNITY_EDITOR
         
         EditorApplication.EnterPlaymode();
@@ -25,6 +33,11 @@ public class MenuUIHandler : MonoBehaviour
         Application.Quit();
 
         #endif
+    }
+
+    public void NewColorSelected(Color color)
+    {
+        MainManager.instance.TeamColor = color;
     }
 
     public void StartNew()
@@ -37,5 +50,7 @@ public class MenuUIHandler : MonoBehaviour
         ColorPicker.Init();
         //this will call the NewColorSelected function when the color picker have a color button clicked.
         ColorPicker.onColorChanged += NewColorSelected;
+
+        ColorPicker.SelectColor(MainManager.instance.TeamColor);
     }
 }
