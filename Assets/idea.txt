@@ -1,0 +1,12 @@
+astroid retro game:
+
+inharitence: collided objects
+		astroid inharid from that then add the move stuff to it
+
+polymorphism: move methods
+		one moes the player, the other moves an astroid
+
+encapulation: in the player... done
+
+abstraction: move meethod
+		a move method in the collided object script that the astroids override
