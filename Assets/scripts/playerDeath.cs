@@ -1,8 +1,12 @@
 public class playerDeath : ObjectHit
 {
-    public override void OnHit()
+    public override void OnHit(string tag)
     {
-        //save the score
-        MenuManager.ToMainMenu();
+        if (tag == "rock")
+        {
+            MenuManager.ToMainMenu();
+
+        }
+        
     }
 }

@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class RockHit : ObjectHit
 {
-    public override void OnHit()
+    public override void OnHit(string tag)
     {
+        if (tag == "Player")
+        {
+            AddToScore();
 
-        AddToScore();
-        Destroy(gameObject);
+
+            Destroy(gameObject);
+        }
     }
 
     private void AddToScore()

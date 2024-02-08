@@ -1,19 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ObjectHit : MonoBehaviour
 {
-    public abstract void OnHit();
+    public abstract void OnHit(string tag);
 
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnHit();
-
-        Debug.Log("hit");
-
-        Destroy(gameObject);
+        OnHit(collision.gameObject.tag);
     }
 }
