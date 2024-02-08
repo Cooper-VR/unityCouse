@@ -19,7 +19,7 @@ public class MoveMethods : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    // POLYMORPHISM
     public void Move(Vector3 Direction)
     {
         float randomAngleOffset = Random.Range(-45f, 45f); // Adjust the range as needed

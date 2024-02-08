@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RockSpawner : MonoBehaviour
 {
+    // ENCAPSULATION
     private float spawnInterval;
     public GameObject RockPrefab;
     MoveMethods rock;
