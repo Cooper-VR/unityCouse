@@ -6,7 +6,8 @@ public class MoveMethods : MonoBehaviour
 {
     public obectType type;
     private Rigidbody2D rb;
-    private float speed = 900f;
+    private float speed = 180000f;
+    private float rotateSpeed = 175;
 
     public enum obectType
     {
@@ -25,13 +26,16 @@ public class MoveMethods : MonoBehaviour
     }
     public void Move(Vector2 MoveVector)
     {
-        if (rb.velocity.magnitude < 25)
+        transform.Rotate(new Vector3(0, 0, rotateSpeed * -Input.GetAxis("Horizontal") * Time.deltaTime));
+
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, 25);
+
         rb.AddForce(MoveVector * speed * Time.deltaTime);
     }
 
     private void Update()
     {
-        Vector2 moveVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveVector = transform.up * Input.GetAxis("Vertical");
 
         if (type == obectType.Player)
         {
