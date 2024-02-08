@@ -23,7 +23,7 @@ public class playerShoot : MonoBehaviour
         Debug.Log("fire");
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.up * 2, transform.rotation, transform.parent);
-        bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 7000);
+        bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 18000);
     }
 
 

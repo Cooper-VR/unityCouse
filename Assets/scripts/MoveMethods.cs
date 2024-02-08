@@ -20,8 +20,15 @@ public class MoveMethods : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Move()
+    public void Move(Vector3 Direction)
     {
+        float randomAngleOffset = Random.Range(-45f, 45f); // Adjust the range as needed
+        Quaternion randomRotation = Quaternion.AngleAxis(randomAngleOffset, Vector3.up);
+        Vector3 adjustedDirection = randomRotation * Direction;
+
+        Debug.Log(adjustedDirection);
+
+        rb.AddForce(Direction * 4000);
 
     }
     public void Move(Vector2 MoveVector)
@@ -41,9 +48,6 @@ public class MoveMethods : MonoBehaviour
         {
             Move(moveVector);
         }
-        else
-        {
-            Move();
-        }
+        
     }
 }

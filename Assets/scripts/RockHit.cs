@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class RockHit : ObjectHit
@@ -15,6 +16,10 @@ public class RockHit : ObjectHit
 
     private void AddToScore()
     {
+        int score = int.Parse(FindObjectOfType<TMP_Text>().text);
 
+        score += 100;
+
+        FindObjectOfType<TMP_Text>().text = score.ToString();
     }
 }

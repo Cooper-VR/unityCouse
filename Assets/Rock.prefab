@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8499596125333155296}
   - component: {fileID: 2873032013899553513}
   - component: {fileID: 6370240336773770964}
+  - component: {fileID: -4651953135210888602}
   m_Layer: 5
   m_Name: Rock
   m_TagString: Rock
@@ -92,7 +93,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -162,3 +163,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6a60dc5d7f3204fa4c7b9cf491e043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4651953135210888602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472032590924200022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f06f7a89b21bf9438130c2714dd4486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  player: {fileID: 0}
+  movementSpeed: 5
